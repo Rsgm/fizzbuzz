@@ -1,65 +1,58 @@
-http://fatiherikli.github.io/brainfuck-visualizer/
++                                                                       set the cell 1 to 1 to start the loop/program
+[
 
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.                                                         F(70)
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.                      i(105)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.     z(122)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.     z(122)
-
-
-
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.          u(117)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.     z(122)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.     z(122)
-
-
-Fizz in one line.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++.+++++++++++++++++..
-
-Buzz, in one line. I like this one better.
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++.+++++..
-[-] Reset the pointer to 0.
-
-
-
-
-
-+                                           set the cell 1 to 1 to start the loop/program
-[>
-    +>+>+                                   add to each used cell
-    >+++<                                   add 3 (to divide cell 4 by) to cell 5 and move pointer to cell 4
-    
-    [->-[>+>>]>[+[-<+>]>+>>]<<<<<]          modulo division algorithm http://esolangs.org/wiki/Brainfuck_algorithms#Divmod_algorithm
-    >>>[-]                                  remove the unnecessary quotient
+===== set cells 2(y) and 3(z) to the value of cell 1(x) ====
+                                                                        This is a modified x=y algorithm
+    >y[-] >z[-] >temp[-]<<<                                             clear cells 2 3 and 4
+    [>y+ >z+ >temp+ <<<-]                                               add one to cells 2 3 and 4 for every one taken out of cell 1
+    >>>[<<< x+>>> temp-]<                                               move value of cell 4 to cell 1
     
     
+===== test if divisible by 3 =====
     
+    >+++<                                                               add 3 (to divide cell 3 by) to cell 4 and move pointer to cell 4
+    [->-[>+>>]>[+[-<+>]>+>>]<<<<<]                                      modulo division algorithm
+    >[-]>>[-]<                                                          remove the unnecessary quotient
     
-    http://esolangs.org/wiki/Brainfuck_algorithms#if_.28x_.3D.3D_0.29_.7B_code_.7D
-    +++
-        >[-]+<
-        >>[-]<<
-        [><-[>>+<<-]]
-        >>[<<+>>-]<<
-        >[
-            -
-            ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++.+++++++++++++++++..
-        <]
-        
-        >[-]<
-    
-    
-this is a modified vesion of the if(x==0){code} algorithm found here http://esolangs.org/wiki/Brainfuck_algorithms#if_.28x_.3D.3D_0.29_.7B_code_.7D
->temp0[-]<
->>temp1[-]<<
-x [ >temp0+< >>temp1+<< x- ]  >temp0[ < x+> temp0- ]+<
->>temp1[ < temp0-> temp1[-]]<<
->temp0[
-    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++.+++++++++++++++++..  print Fizz
-temp0-]
+===== if it is then print Fizz =====
+                                                                        this is a modified vesion of the if(x==0){code} algorithm
+    >temp1[-]> temp2[-]<<                                               clear temp1 and temp2 cells
+    x [ >temp1+ >temp2+<< x- ]  >temp1[ < x+> temp1- ]+<
+    >>temp2[ < temp1-> temp2[-]]<<
+    >temp1[
+        >++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.
+        +++++++++++++++++++++++++++++++++++.
+        +++++++++++++++++..                                             print Fizz
+        [-]<                                                            clear
+    temp1-]<
 
+    [-]<<<                                                              clears the devision remainder cell
+
+    
+===== test if divisible by 5 =====
+    
+    >+++++<                                                               add 3 (to divide cell 3 by) to cell 4 and move pointer to cell 4
+    [->-[>+>>]>[+[-<+>]>+>>]<<<<<]                                      modulo division algorithm
+    >[-]>>[-]<                                                          remove the unnecessary quotient
+    
+    
+===== if it is then print Buzz =====
+                                                                        this is a modified vesion of the if(x==0){code} algorithm
+    >temp1[-]> temp2[-]<<                                               clear temp1 and temp2 cells
+    x [ >temp1+ >temp2+<< x- ]  >temp1[ < x+> temp1- ]+<
+    >>temp2[ < temp1-> temp2[-]]<<
+    >temp1[
+        >++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.
+        +++++++++++++++++++++++++++++++++++++++++++++++++++.
+        +++++..                                             print Buzz
+        [-]<                                                            clear
+    temp1-]<
+
+    [-]<<                                                              clears the devision remainder cell
     
 
 
+    ++++++++++++++++++++++++++++++++.                                   add a space
+    [-]<                                                                 clear cell
 
-<+]
++]                                                                      repeat
