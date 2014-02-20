@@ -17,6 +17,6 @@ Most of this is commented, but the comments might mess up some interpreters, if 
 
 I could have made it output the numbers as well, but the code would have been twice as long/slow(rough estimation).
 
-[x=y algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#x_.3D_y)
-[if(x==0){code} algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#if_.28x_.3D.3D_0.29_.7B_code_.7D)
+[x=y algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#x_.3D_y)  
+[if(x==0){code} algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#if_.28x_.3D.3D_0.29_.7B_code_.7D)  
 [modulo division algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#Divmod_algorithm)
