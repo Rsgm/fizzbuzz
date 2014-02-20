@@ -13,6 +13,53 @@ http://fatiherikli.github.io/brainfuck-visualizer/
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.     z(122)
 
 
+Fizz in one line.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++.+++++++++++++++++..
+
 Buzz, in one line. I like this one better.
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++++++++++++++++++.+++++..
 [-] Reset the pointer to 0.
+
+
+
+
+
++                                           set the cell 1 to 1 to start the loop/program
+[>
+    +>+>+                                   add to each used cell
+    >+++<                                   add 3 (to divide cell 4 by) to cell 5 and move pointer to cell 4
+    
+    [->-[>+>>]>[+[-<+>]>+>>]<<<<<]          modulo division algorithm http://esolangs.org/wiki/Brainfuck_algorithms#Divmod_algorithm
+    >>>[-]                                  remove the unnecessary quotient
+    
+    
+    
+    
+    http://esolangs.org/wiki/Brainfuck_algorithms#if_.28x_.3D.3D_0.29_.7B_code_.7D
+    +++
+        >[-]+<
+        >>[-]<<
+        [><-[>>+<<-]]
+        >>[<<+>>-]<<
+        >[
+            -
+            ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++.+++++++++++++++++..
+        <]
+        
+        >[-]<
+    
+    
+this is a modified vesion of the if(x==0){code} algorithm found here http://esolangs.org/wiki/Brainfuck_algorithms#if_.28x_.3D.3D_0.29_.7B_code_.7D
+>temp0[-]<
+>>temp1[-]<<
+x [ >temp0+< >>temp1+<< x- ]  >temp0[ < x+> temp0- ]+<
+>>temp1[ < temp0-> temp1[-]]<<
+>temp0[
+    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.+++++++++++++++++++++++++++++++++++.+++++++++++++++++..  print Fizz
+temp0-]
+
+    
+
+
+
+<+]
