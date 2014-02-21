@@ -20,3 +20,7 @@ I could have made it output the numbers as well, but the code would have been tw
 [x=y algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#x_.3D_y)  
 [if(x==0){code} algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#if_.28x_.3D.3D_0.29_.7B_code_.7D)  
 [modulo division algorithm](http://esolangs.org/wiki/Brainfuck_algorithms#Divmod_algorithm)
+
+
+###Java version
+There is also a proper version written in java, for those who don't know what brainfuck is.
